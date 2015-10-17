@@ -77,6 +77,11 @@ public class Level
 		i = 0;
 	}
 	
+	public void update()
+	{
+		
+	}
+	
 	public void addTile(int x, int y, Type type)
 	{
 		map[x][y] = new Tile(type);

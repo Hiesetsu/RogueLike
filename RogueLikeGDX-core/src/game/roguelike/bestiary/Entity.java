@@ -1,6 +1,5 @@
 package game.roguelike.bestiary;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import game.roguelikegdx.data.Type;
