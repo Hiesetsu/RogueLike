@@ -1,5 +1,6 @@
 package game.roguelikegdx.level;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import game.roguelike.armory.Item;
@@ -42,7 +43,11 @@ public class Level
 			{
 				j++;
 				if(elem != null)
+				{
+					batch.setColor(elem.getColor());
 					batch.draw(elem.getTexture(), i*t_width-3, (RogueLike.HEIGHT-30*t_height-5)+(30-j)*t_height);
+					batch.setColor(1, 1, 1, 1);
+				}
 				//System.out.println("J:"+j);
 			}
 		}
@@ -56,7 +61,12 @@ public class Level
 			{
 				j++;
 				if(elem != null)
+				{
+					batch.setColor(elem.getColor());
 					batch.draw(elem.getTexture(), i*t_width-3, (RogueLike.HEIGHT-30*t_height-5)+(30-j)*t_height);
+					batch.setColor(1, 1, 1, 1);
+				}
+					
 				//System.out.println("J:"+j);
 			}
 		}
@@ -70,8 +80,11 @@ public class Level
 			{
 				j++;
 				if(elem != null)
+				{
+					batch.setColor(elem.getColor());
 					batch.draw(elem.getTexture(), i*t_width-3, (RogueLike.HEIGHT-30*t_height-5)+(30-j)*t_height);
-				//System.out.println("J:"+j);
+					batch.setColor(1, 1, 1, 1);
+				}
 			}
 		}
 		i = 0;
@@ -99,9 +112,17 @@ public class Level
 	{
 		creatures[x][y] = new Entity(type);
 	}
+	public void addEntity(int x, int y, Type type, Color color)
+	{
+		creatures[x][y] = new Entity(type, color);
+	}
 	
 	public void addItem(int x, int y, Type type)
 	{
 		loot[x][y] = new Item(type);
+	}
+	public void addItem(int x, int y, Type type, Color color)
+	{
+		loot[x][y] = new Item(type, color);
 	}
 }

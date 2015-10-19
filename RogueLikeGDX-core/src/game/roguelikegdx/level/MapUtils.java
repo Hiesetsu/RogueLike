@@ -1,5 +1,7 @@
 package game.roguelikegdx.level;
 
+import com.badlogic.gdx.graphics.Color;
+
 import game.roguelikegdx.RogueLike;
 import game.roguelikegdx.data.Type;
 
@@ -120,6 +122,6 @@ public class MapUtils
 	
 	public static void placePlayer(int x, int y, Level level)
 	{
-		level.addEntity(x, y, Type.PLAYER);
+		level.addEntity(x, y, Type.PLAYER, Color.GOLD);
 	}
 }

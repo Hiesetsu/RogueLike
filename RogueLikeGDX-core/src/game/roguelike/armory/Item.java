@@ -1,22 +1,21 @@
 package game.roguelike.armory;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import game.roguelikegdx.data.Type;
+import game.roguelikegdx.level.Renderable;
 import game.roguelikegdx.sprites.Atlas;
 
-public class Item {
-
-	private TextureRegion sprite;
-	public Item(Type type)
+public class Item extends Renderable
+{
+	public Item(Type type) 
 	{
-		sprite = Atlas.sprites[type.id];
+		super(type);
 	}
-	
-	public TextureRegion getTexture()
+	public Item(Type type, Color color)
 	{
-		return sprite;
+		super(type, color);
 	}
-
 }

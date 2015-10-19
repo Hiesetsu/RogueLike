@@ -1,21 +1,21 @@
 package game.roguelike.bestiary;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import game.roguelikegdx.data.Type;
+import game.roguelikegdx.level.Renderable;
 import game.roguelikegdx.sprites.Atlas;
 
-public class Entity {
+public class Entity extends Renderable
+{
 
-	private TextureRegion sprite;
-	public Entity(Type type)
+	public Entity(Type type) 
 	{
-		sprite = Atlas.sprites[type.id];
+		super(type);
 	}
-	
-	public TextureRegion getTexture()
+	public Entity(Type type, Color color)
 	{
-		return sprite;
+		super(type, color);
 	}
-
 }

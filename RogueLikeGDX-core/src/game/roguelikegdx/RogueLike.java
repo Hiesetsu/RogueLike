@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 
 import game.roguelikegdx.level.Level;
 import game.roguelikegdx.sprites.Atlas;
@@ -12,6 +13,8 @@ import game.roguelikegdx.sprites.Atlas;
 public class RogueLike extends ApplicationAdapter {
 	public static final int WIDTH = 1024;
 	public static final int HEIGHT = 768;
+	
+	private ShaderProgram shader;
 	
 	SpriteBatch batch;
 	Texture img;
@@ -26,7 +29,10 @@ public class RogueLike extends ApplicationAdapter {
 	{
 		Gdx.graphics.setDisplayMode(WIDTH, HEIGHT, false);
 		Gdx.graphics.setTitle("Rogue Like");
+		ShaderProgram.pedantic = false;
+		//shader = new ShaderProgram(Gdx.files.internal("shaders/color.vsh"), Gdx.files.internal("shaders/color.fsh"));
 		batch = new SpriteBatch();
+		//batch.setShader(shader);
 		img = new Texture("BG.png");
 		Atlas.init();
 		level = new Level();
